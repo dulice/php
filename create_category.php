@@ -1,14 +1,8 @@
 <?php
     require_once "template/header.php";
     if(isset($_GET['addBtn'])) {
-        $message = $_GET['message'];
-        $sql = "INSERT INTO todo(message) VALUES ('$message')";
-        if(mysqli_query($conn, $sql)) {
-            echo "<script>
-            location.href = 'category_list.php'
-            </script>";
-        } else {
-            die("create error");
+        if(createCategory()) {
+            echo "<script> location.href = 'category_list.php' </script>";
         }
     }
 

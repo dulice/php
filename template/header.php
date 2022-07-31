@@ -1,5 +1,6 @@
 <?php
     require_once "core/conn.php";
+    require "core/functions.php";
     $url = "http://localhost/crud/category/admin_dashboard";
 ?>
 <!DOCTYPE html>

@@ -1,7 +1,6 @@
 <?php
     require_once "template/header.php";
-    $sql = "SELECT * FROM todo";
-    $query = mysqli_query($conn, $sql);
+    
 ?>  
                 <!-- breadcrumbs-container-->
                 <div class="card mb-4">
@@ -47,7 +46,7 @@
                             </thead>
                             <tbody>
                                 <?php
-                                    while($row = mysqli_fetch_assoc($query)) {
+                                    foreach(listCategory() as $row) {
                                         $time = date("h:i", strtotime($row['created_at']));
                                 ?>
                                     

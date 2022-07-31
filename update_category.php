@@ -1,18 +1,10 @@
 <?php
     require_once "template/header.php";
     $id = $_GET['id'];
-    $fetchDetail = "SELECT * FROM todo WHERE id=$id";
-    $fetchMessage = mysqli_query($conn, $fetchDetail);
-    $row = mysqli_fetch_assoc($fetchMessage);
+    $row = singleListCategroy($id);
     if(isset($_GET['updateBtn'])) {
-        $message = $_GET['message'];
-        $sql = "UPDATE todo SET message='$message' WHERE id=$id";
-        if(mysqli_query($conn, $sql)) {
-            echo "<script>
-            location.href = 'category_list.php'
-            </script>";
-        } else {
-            die("update error");
+        if(updateCategroy($id)) {
+            echo "<script> location.href = 'category_list.php' </script>";
         }
     }
 ?>
