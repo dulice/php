@@ -26,8 +26,7 @@
         <input type="file" name="image[]" multiple>
         <button>Upload</button>
     </form>
-    <?php
-    
+    <?php 
     require "data.php";
      foreach(showImage() as $photo ) {
     ?>
