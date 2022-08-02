@@ -1,11 +1,10 @@
 <?php
+    require_once "core/auth.php";
     require_once "template/header.php";
     $id = $_GET['id'];
     $row = singleListCategroy($id);
     if(isset($_GET['updateBtn'])) {
-        if(updateCategroy($id)) {
-            echo "<script> location.href = 'category_list.php' </script>";
-        }
+        updateCategroy($id);
     }
 ?>
 
@@ -22,10 +21,10 @@
 </div>
 
 <form method="GET" class="">
-    <div class="form-inline">
+    <div class="row">
         <input type="hidden" value="<?php echo $row['id'] ?>" name="id">
-        <input type="text" name="message" value="<?php echo $row['message'] ?>" class="form-control">
-        <button name="updateBtn" class="btn btn-primary">Update</button>
+        <input type="text" name="title" value="<?php echo $row['title'] ?>" class="form-control w-75 col-11 col-sm-10">
+        <button name="updateBtn" class="btn btn-primary col-1 col-sm-2">Update</button>
     </div>
 </form>
 

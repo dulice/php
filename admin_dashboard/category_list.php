@@ -1,4 +1,5 @@
 <?php
+    require_once "core/auth.php";
     require_once "template/header.php"; 
 ?>  
                 <!-- breadcrumbs-container-->
@@ -26,9 +27,9 @@
                             <button class=" btn btn-outline-secondary">
                                 <i class="full-screen-btn feather feather-maximize-2"></i>
                             </button>
-                            <button onclick="linkClick('category_create.php')" class="btn btn-outline-primary">
+                            <a href='category_create.php' class="btn btn-outline-primary">
                                 <i class="father feather-plus-circle"></i>
-                            </button>
+                            </a>
                         </div>
                     </div>
 
@@ -39,26 +40,24 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Category</th>
-                                    <th>Created</th>
+                                    <th>User</th>
                                     <th>Control</th>
+                                    <th>Created</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
-                                    foreach(listCategory() as $row) {
-                                        $time = date("h:i", strtotime($row['created_at']));
-                                ?>
+                                <?php foreach(listCategory() as $row) { ?>
                                     
                                     <tr>
                                         <td><?php echo $row['id'] ?></td>
-                                        <td><?php echo $row['message'] ?></td>
-                                        <td><?php echo $time ?></td>
-                                        <td class='btn btn-sm  bg-primary me-3'>
-                                            <a class='text-white text-decoration-none' href="category_update.php?id=<?php echo $row['id'] ?>">Update</a>
+                                        <td><?php echo $row['title'] ?></td>
+                                        <td><?php echo (user($row['user_id'])['username']) ?></td>
+                                        
+                                        <td class=''>
+                                            <a class='btn btn-sm  bg-primary me-3 text-white text-decoration-none' href="category_update.php?id=<?php echo $row['id'] ?>">Update</a>
+                                            <a onclick="return confirm('Are you sure, you want to delete it?')" class='btn btn-sm bg-danger text-white text-decoration-none' href="category_delete.php?id=<?php echo $row['id'] ?>">Delete</a>
                                         </td>
-                                        <td class='btn btn-sm bg-danger'>
-                                            <a class='text-white text-decoration-none' href="category_delete.php?id=<?php echo $row['id'] ?>">Delete</a>
-                                        </td>
+                                        <td><?php echo showTime($row['created_at']) ?></td>
                                     </tr>
                                 <?php } ?>
                                     

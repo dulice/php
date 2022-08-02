@@ -1,18 +1,11 @@
 <?php
 
-    function createCategory() {
-        $message = $_GET['message'];
-        $sql = "INSERT INTO todo(message) VALUES ('$message')";
-        if(mysqli_query(con(), $sql)) {
-            return true;
-        } else {
-            die("create error" .mysqli_error());
-        }
-    }
+    require "user.php";
 
-    function listCategory() {
+    // common 
+    function items($data) {
         $rows = [];
-        $sql = "SELECT * FROM todo";
+        $sql = "SELECT * FROM $data";
         $query = mysqli_query(con(), $sql);
         while($row = mysqli_fetch_assoc($query)) {
             array_push($rows, $row);
@@ -20,29 +13,51 @@
         return $rows;
     }
 
-    function singleListCategroy($id) {
-        $fetchDetail = "SELECT * FROM todo WHERE id=$id";
-        $fetchMessage = mysqli_query(con(), $fetchDetail);
+    function item($sql) {
+        $fetchMessage = mysqli_query(con(), $sql);
         $row = mysqli_fetch_assoc($fetchMessage);
         return $row;
     }
 
+    function showTime($timestamp, $format="d-m-Y") {
+        return date($format, strtotime($timestamp));
+    }
+
+    //user
+    function user($u) {
+        $sql = "SELECT * FROM users WHERE id=$u";
+        return item($sql);
+    }
+
+    // category 
+    function createCategory() {
+        $title = $_POST['title'];
+        $user_id = $_SESSION['user']['id'];
+        $sql = "INSERT INTO categories(title,user_id) VALUES ('$title','$user_id')";
+        runQuery($sql);
+        redirect('category_list.php');
+    }
+
+    function listCategory() {
+        return items('categories');
+    }
+
+    function singleListCategroy($id) {
+        $fetchDetail = "SELECT * FROM categories WHERE id=$id";
+        return item($fetchDetail);
+    }
+
     function deleteCategory($id) {
-        $sql = "DELETE FROM todo WHERE id=$id";
-        if(mysqli_query(con(), $sql)) {
-            return true;
-        } else {
-            die("delete error" .mysqli_error());
-        }
+        $sql = "DELETE FROM categories WHERE id=$id";
+        runQuery($sql);
+        redirect('category_list.php');
     }
 
     function updateCategroy($id) {
-        $message = $_GET['message'];
-        $sql = "UPDATE todo SET message='$message' WHERE id=$id";
-        if(mysqli_query(con(), $sql)) {
-            return true;
-        } else {
-            die("update error:" .mysqli_error());
-        }
+        $title = $_GET['title'];
+        $user_id = $_SESSION['user']['id'];
+        $sql = "UPDATE categories SET title='$title',user_id='$user_id' WHERE id=$id";
+        runQuery($sql);
+        redirect('category_list.php');
     }
     

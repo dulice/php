@@ -1,9 +1,8 @@
 <?php
+    require_once "core/auth.php";
     require_once "template/header.php";
-    if(isset($_GET['addBtn'])) {
-        if(createCategory()) {
-            echo "<script> location.href = 'category_list.php' </script>";
-        }
+    if(isset($_POST['addBtn'])) {
+        createCategory();
     }
 
 ?>
@@ -19,10 +18,10 @@
         </div>
     </div>
 
-<form method="GET" class="">
-    <div class="form-inline">
-        <input type="text" name="message" class="form-control">
-        <button name="addBtn" class="btn btn-primary">Add</button>
+<form method="post" class="">
+    <div class="row">
+        <input type="text" name="title" class="form-control w-75 col-11 col-sm-10" placeholder="Categories">
+        <button name="addBtn" class="btn btn-primary col-1 col-sm-2">Add</button>
     </div>
 </form>
 
