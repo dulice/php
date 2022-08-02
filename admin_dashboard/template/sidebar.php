@@ -24,7 +24,7 @@
                     <div>
                         <h5 class="text-black-50 text-uppercase">Item Management</h5>
                         <ul class="list-group">
-                            <li class="list-group-item"><a class=" nav-link " href="create_category.php">Create Category</a></li>
+                            <li class="list-group-item"><a class=" nav-link " href="category_create.php">Create Category</a></li>
                             <li class="list-group-item"><a class=" nav-link" href="category_list.php">Category List</a></li>
 
                             <li></li>

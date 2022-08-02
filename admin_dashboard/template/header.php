@@ -1,7 +1,6 @@
 <?php
-    require_once "core/conn.php";
-    require "core/functions.php";
-    $url = "http://".$_SERVER['HTTP_HOST']."/crud/admin_dashboard/admin_dashboard";
+require "core/base.php";
+require "core/functions.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,13 +11,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Admin Dashboard</title>
-        <link rel="stylesheet" href="<?php echo "$url" ?>/assets/vendor/font-awesome-4.7.0/css/font-awesome.css">
-        <link rel="stylesheet" href="<?php echo "$url" ?>/assets/vendor/feather-icons-web/feather.css">
+        <link rel="stylesheet" href="<?php echo url() ?>/assets/vendor/font-awesome-4.7.0/css/font-awesome.css">
+        <link rel="stylesheet" href="<?php echo url() ?>/assets/vendor/feather-icons-web/feather.css">
         <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" href="<?php echo "$url" ?>/assets/vendor/slick/slick.css">
-        <link rel="stylesheet" href="<?php echo "$url" ?>/assets/vendor/slick/slick-theme.css">
-        <link rel="stylesheet" href="<?php echo "$url" ?>/assets/style/style.css">
-        <link rel="stylesheet" href="<?php echo "$url" ?>/assets/style/custom.css">
+        <link rel="stylesheet" href="<?php echo url() ?>/assets/vendor/slick/slick.css">
+        <link rel="stylesheet" href="<?php echo url() ?>/assets/vendor/slick/slick-theme.css">
+        <link rel="stylesheet" href="<?php echo url() ?>/assets/style/style.css">
+        <link rel="stylesheet" href="<?php echo url() ?>/assets/style/custom.css">
 
     </head>
 
@@ -50,8 +49,8 @@
                         <div class="btn-group">
                             <button class="btn btn-light sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                <img src="<?php echo "$url" ?>/assets/image/user/profile.jpg" alt="profile image" class="rounded-circle avator">
-                                <span>Dulice</span>
+                                <img src="<?php echo url() ?>/assets/image/<?php echo $_SESSION['user']['photo']?>" alt="profile image" class="rounded-circle avator">
+                                <span><?php echo $_SESSION['user']['username'] ?></span>
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
@@ -60,7 +59,7 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Login</a></li>
+                                <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                             </ul>
                         </div>
                     </div>

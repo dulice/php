@@ -1,4 +1,5 @@
 <?php
+    require_once "core/auth.php";
     require_once "template/header.php";
 ?>
 
@@ -74,11 +75,11 @@
                                 <div class="d-flex justify-content-between align-items-center p-3">
                                     <h3>Orders & Views</h3>
                                     <div class="">
-                                        <img class="avator user-img rounded-circle" src="<?php echo "$url" ?>/assets/image/user/avatar1.jpg" alt="avator">
-                                        <img class="avator user-img rounded-circle" src="<?php echo "$url" ?>/assets/image/user/avatar2.jpg" alt="avator">
-                                        <img class="avator user-img rounded-circle" src="<?php echo "$url" ?>/assets/image/user/avatar3.jpg" alt="avator">
-                                        <img class="avator user-img rounded-circle" src="<?php echo "$url" ?>/assets/image/user/avatar4.jpg" alt="avator">
-                                        <img class="avator rounded-circle" src="<?php echo "$url" ?>/assets/image/user/avatar5.jpg" alt="avator">
+                                        <img class="avator user-img rounded-circle" src="<?php echo url() ?>/assets/image/user/avatar1.jpg" alt="avator">
+                                        <img class="avator user-img rounded-circle" src="<?php echo url() ?>/assets/image/user/avatar2.jpg" alt="avator">
+                                        <img class="avator user-img rounded-circle" src="<?php echo url() ?>/assets/image/user/avatar3.jpg" alt="avator">
+                                        <img class="avator user-img rounded-circle" src="<?php echo url() ?>/assets/image/user/avatar4.jpg" alt="avator">
+                                        <img class="avator rounded-circle" src="<?php echo url() ?>/assets/image/user/avatar5.jpg" alt="avator">
 
                                     </div>
                                 </div>
@@ -102,7 +103,7 @@
                                                 </div>
                                             </div>
                                             <div class="col col-md-12">
-                                                <img class="item mx-auto" src="<?php echo "$url" ?>/assets/image/item/item1.png" alt="book">
+                                                <img class="item mx-auto" src="<?php echo url() ?>/assets/image/item/item1.png" alt="book">
                                             </div>
                                         </div>
                                     </div>
@@ -119,7 +120,7 @@
                                                 </div>
                                             </div>
                                             <div class="col col-md-12">
-                                                <img class="item mx-auto" src="<?php echo "$url" ?>/assets/image/item/item2.png" alt="book">
+                                                <img class="item mx-auto" src="<?php echo url() ?>/assets/image/item/item2.png" alt="book">
                                             </div>
                                         </div>
                                     </div>
@@ -136,7 +137,7 @@
                                                 </div>
                                             </div>
                                             <div class="col col-md-12">
-                                                <img class="item mx-auto" src="<?php echo "$url" ?>/assets/image/item/item3.png" alt="book">
+                                                <img class="item mx-auto" src="<?php echo url() ?>/assets/image/item/item3.png" alt="book">
                                             </div>
                                         </div>
                                     </div>
@@ -153,7 +154,7 @@
                                                 </div>
                                             </div>
                                             <div class="col">
-                                                <img class="item mx-auto" src="<?php echo "$url" ?>/assets/image/item/item4.png" alt="book">
+                                                <img class="item mx-auto" src="<?php echo url() ?>/assets/image/item/item4.png" alt="book">
                                             </div>
                                         </div>
                                     </div>
@@ -233,11 +234,11 @@
         </div>
     </section>
 
-    <script src="<?php echo "$url" ?>/assets/vendor/jquery-3.3.1.min.js"></script>
-    <script src="<?php echo "$url" ?>/assets/vendor/bootstrap-5.1.3-dist/js/bootstrap.bundle.js"></script>
-    <script src="<?php echo "$url" ?>/assets/vendor/way_point/jquery.waypoints.min.js"></script>
-    <script src="<?php echo "$url" ?>/assets/vendor/counter_up/counter_up.js"></script>
-    <script src="<?php echo "$url" ?>/assets/vendor/chart_js/Chart.min.js"></script>
-    <script src="<?php echo "$url" ?>/assets/vendor/slick/slick.min.js"></script>
-    <script src="<?php echo "$url" ?>/assets/js/app.js"></script>
-    <script src="<?php echo "$url" ?>/assets/js/counterup.js"></script>
+    <script src="<?php echo url() ?>/assets/vendor/jquery-3.3.1.min.js"></script>
+    <script src="<?php echo url() ?>/assets/vendor/bootstrap-5.1.3-dist/js/bootstrap.bundle.js"></script>
+    <script src="<?php echo url() ?>/assets/vendor/way_point/jquery.waypoints.min.js"></script>
+    <script src="<?php echo url() ?>/assets/vendor/counter_up/counter_up.js"></script>
+    <script src="<?php echo url() ?>/assets/vendor/chart_js/Chart.min.js"></script>
+    <script src="<?php echo url() ?>/assets/vendor/slick/slick.min.js"></script>
+    <script src="<?php echo url() ?>/assets/js/app.js"></script>
+    <script src="<?php echo url() ?>/assets/js/counterup.js"></script>

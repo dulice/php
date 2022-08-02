@@ -1,6 +1,5 @@
 <?php
-    require_once "template/header.php";
-    
+    require_once "template/header.php"; 
 ?>  
                 <!-- breadcrumbs-container-->
                 <div class="card mb-4">
@@ -27,7 +26,7 @@
                             <button class=" btn btn-outline-secondary">
                                 <i class="full-screen-btn feather feather-maximize-2"></i>
                             </button>
-                            <button onclick="linkClick('create_category.php')" class="btn btn-outline-primary">
+                            <button onclick="linkClick('category_create.php')" class="btn btn-outline-primary">
                                 <i class="father feather-plus-circle"></i>
                             </button>
                         </div>
@@ -55,10 +54,10 @@
                                         <td><?php echo $row['message'] ?></td>
                                         <td><?php echo $time ?></td>
                                         <td class='btn btn-sm  bg-primary me-3'>
-                                            <a class='text-white text-decoration-none' href="update_category.php?id=<?php echo $row['id'] ?>">Update</a>
+                                            <a class='text-white text-decoration-none' href="category_update.php?id=<?php echo $row['id'] ?>">Update</a>
                                         </td>
                                         <td class='btn btn-sm bg-danger'>
-                                            <a class='text-white text-decoration-none' href="delete_category.php?id=<?php echo $row['id'] ?>">Delete</a>
+                                            <a class='text-white text-decoration-none' href="category_delete.php?id=<?php echo $row['id'] ?>">Delete</a>
                                         </td>
                                     </tr>
                                 <?php } ?>
