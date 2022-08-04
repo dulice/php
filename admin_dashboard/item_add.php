@@ -1,5 +1,6 @@
 <?php
-    require_once "template/header.php"
+    require_once "core/auth.php";
+    require_once "template/header.php";
 ?>         
                 <!-- breadcrumbs-container-->
                 <div class="card mb-4">

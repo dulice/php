@@ -1,4 +1,5 @@
 <?php
+    require_once "core/auth.php";
     require_once "./template/header.php";
 ?>
                 <div class="card">
@@ -23,7 +24,7 @@
                                         <span class="text-white-50 feather-camera"></span>
                                     </label>
                                     <input id="file" type="file" onchange="loadFile(event)" type="file" accept="image/png, image/jpeg, image/jpg" name="image" class="upload" />
-                                    <img src="<?php echo "$url" ?>/assets/image/user/profile.jpg" id="output" class="rounded-circle edit-profile-img" />
+                                    <img src="assets/image/<?php echo $_SESSION['user']['photo'] ?>" id="output" class="rounded-circle edit-profile-img" />
                                 </div>
                                 <h6 class="mt-3">Profile Photo</h6>
                             </div>
@@ -34,7 +35,7 @@
                                     <div class="form-group mb-4">
                                         <label for="username" class="text-black-50 ms-2">Name</label>
                                         <div class="border-bottom border-secondary p-2 d-flex justify-content-between align-items-center ">
-                                            <input type="text" id="username" class="personal-info w-75" value="Dulice" />
+                                            <input type="text" id="username" class="personal-info w-75" value="<?php echo $_SESSION['user']['username'] ?>" />
                                             <i class="feather-x"></i>
                                         </div>
                                         
@@ -53,7 +54,7 @@
                                     <div class="form-group mb-4">
                                         <label for="item-name" class="text-black-50 ms-2">Email</label>
                                         <div class="border-bottom border-secondary p-2 d-flex justify-content-between align-items-center ">
-                                            <input type="text" class="personal-info w-75" id="item-name" value="duliceellen600@gmail.com">
+                                            <input type="text" class="personal-info w-75" id="item-name" value="<?php echo $_SESSION['user']['email'] ?>">
                                             <i class="feather-x"></i>
                                         </div>                                      
                                     </div>

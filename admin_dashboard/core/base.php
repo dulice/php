@@ -9,3 +9,5 @@ function url() {
     $url = "http://".$_SERVER['HTTP_HOST']."/crud/admin_dashboard/admin_dashboard";
     return $url;
 }
+
+$role = ["Admin", "Editor", "User"];

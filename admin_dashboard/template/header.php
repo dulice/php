@@ -25,8 +25,7 @@ require "core/functions.php";
         <section class="container-fluid">
             <div class="row">
                 <!-- menu sidebar  -->
-                <div class="menu col-12 col-md-3 vh-100 sidebar  ">
-
+                
                 <?php require_once "sidebar.php" ?>
 
                 <div class="col-12 col-md-9 vh-100 overflow-scroll">
