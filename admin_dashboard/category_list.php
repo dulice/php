@@ -1,5 +1,6 @@
 <?php
     require_once "core/auth.php";
+    require_once "core/isAdmin&isEditor.php";
     require_once "template/header.php"; 
 ?>  
                 <!-- breadcrumbs-container-->
@@ -21,7 +22,7 @@
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <div class="item-list">
                             <i class="text-primary feather feather-list" style="font-size: 24px;"></i>
-                            <span class="h4">Item List</span>
+                            <span class="h4">Category List</span>
                         </div>
                         <div class="">
                             <button class=" btn btn-outline-secondary">

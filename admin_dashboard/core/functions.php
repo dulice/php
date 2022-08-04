@@ -3,9 +3,8 @@
     require "user.php";
 
     // common 
-    function items($data) {
-        $rows = [];
-        $sql = "SELECT * FROM $data";
+    function items($sql) {
+        $rows = [];     
         $query = mysqli_query(con(), $sql);
         while($row = mysqli_fetch_assoc($query)) {
             array_push($rows, $row);
@@ -46,7 +45,8 @@
     }
 
     function users() {
-        return items('users');
+        $sql = "SELECT * FROM users";
+        return items($sql);
     }
 
     // category 
@@ -59,7 +59,8 @@
     }
 
     function listCategory() {
-        return items('categories');
+        $sql = "SELECT * FROM categories";
+        return items($sql);
     }
 
     function singleListCategroy($id) {
@@ -93,8 +94,19 @@
         redirect('post_list.php');
     }
 
+    function userPost() {
+        $user_id = $_SESSION['user']['id'];
+        $sql = "SELECT * FROM posts WHERE user_id=$user_id";
+        return items($sql);
+    }
+
     function listPost() {
-        return items('posts');
+        if($_SESSION['user']['role'] == 2) {
+            return userPost();
+        } else {
+            $sql = "SELECT * FROM posts";
+            return items($sql);
+        }        
     }
 
     function singleListPost($id) {

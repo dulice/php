@@ -42,7 +42,9 @@
                                     <th>Title</th>
                                     <th>Description</th>
                                     <th>Category</th>
-                                    <th>User</th>
+                                    <?php if($_SESSION['user']['role'] != 2) { ?>
+                                        <th>User</th>
+                                    <?php } ?>
                                     <th>Control</th>
                                     <th>Created</th>
                                 </tr>
@@ -55,7 +57,10 @@
                                         <td><?php echo textLimit($row['title']); ?></td>
                                         <td><?php echo textLimit($row['description']) ?></td>
                                         <td class="text-nowrap"><?php echo (singleListCategroy($row['category_id'])['title']) ?></td>
-                                        <td class="text-nowrap"><?php echo (user($row['user_id'])['username']) ?></td>
+
+                                        <?php if($_SESSION['user']['role'] != 2) { ?>
+                                            <td class="text-nowrap"><?php echo (user($row['user_id'])['username']) ?></td>
+                                        <?php } ?>
                                         
                                         <td class='text-nowrap'>
                                             <a class='btn btn-sm bg-primary me-1 text-white text-decoration-none' href="post_update.php?id=<?php echo $row['id'] ?>"> 

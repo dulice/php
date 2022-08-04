@@ -22,15 +22,19 @@
             <li></li>
         </ul>
     </div>
-    <div>
-        <h5 class="text-black-50 text-uppercase">Category Management</h5>
-        <ul class="list-group">
-            <li class="list-group-item"><a class=" nav-link " href="category_create.php">Create Category</a></li>
-            <li class="list-group-item"><a class=" nav-link" href="category_list.php">Category List</a></li>
 
-            <li></li>
-        </ul>
-    </div>
+    <?php if($_SESSION['user']['role'] <= 1) { ?>
+        <div>
+            <h5 class="text-black-50 text-uppercase">Category Management</h5>
+            <ul class="list-group">
+                <li class="list-group-item"><a class=" nav-link " href="category_create.php">Create Category</a></li>
+                <li class="list-group-item"><a class=" nav-link" href="category_list.php">Category List</a></li>
+
+                <li></li>
+            </ul>
+        </div>
+    <?php } ?>
+
     <div>
         <h5 class="text-black-50 text-uppercase">Post Management</h5>
         <ul class="list-group">
