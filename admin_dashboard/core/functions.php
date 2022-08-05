@@ -1,7 +1,7 @@
 <?php
 
     require "user.php";
-
+    
     // common 
     function items($sql) {
         $rows = [];     
@@ -24,7 +24,7 @@
 
     function textLimit ($str, $limit=50) {
         // substr($str, $limit, $length);
-        if(strlen($str) >= 50) {
+        if(strlen($str) >= $limit) {
             return substr("$str", 0, $limit) . "...";
         } else {
             return $str;
@@ -129,4 +129,14 @@
         runQuery($sql);
         redirect('post_list.php');
     }
+
+    //front panel
+    function fPost() {
+        $sql = "SELECT * FROM posts";
+        return items($sql);     
+    }
     
+    function sameCat($category_id,$id) {
+        $sql = "SELECT * FROM posts WHERE category_id=$category_id AND id!=$id LIMIT 2";
+        return items($sql);
+    }

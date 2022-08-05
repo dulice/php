@@ -54,9 +54,15 @@
                                     
                                     <tr>
                                         <td><?php echo $row['id'] ?></td>
-                                        <td><?php echo textLimit($row['title']); ?></td>
-                                        <td><?php echo textLimit($row['description']) ?></td>
-                                        <td class="text-nowrap"><?php echo (singleListCategroy($row['category_id'])['title']) ?></td>
+                                        <td>
+                                            <a href="post_detail.php?id=<?php echo $row['id']; ?>">
+                                                <?php echo textLimit($row['title']); ?>
+                                            </a>
+                                        </td>
+                                        <td><?php echo strip_tags(html_entity_decode((textLimit($row['description'])))) ?></td>
+                                        <td class="text-nowrap">
+                                            <?php echo (singleListCategroy($row['category_id'])['title']) ?>                                      
+                                        </td>
 
                                         <?php if($_SESSION['user']['role'] != 2) { ?>
                                             <td class="text-nowrap"><?php echo (user($row['user_id'])['username']) ?></td>

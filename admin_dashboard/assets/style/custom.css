@@ -56,6 +56,20 @@
   border: blueviolet;
 }
 
+.right-menu {
+  position: sticky;
+  top: 10px;
+}
+
+.fcard {
+  transition: .5s;
+}
+
+.fcard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0.5 1rem 2rem rgb(0 0 0 / 25%) !important;
+}
+
 @media (max-width: 768px) {
   .card-display {
     margin-top: 150px !important;
