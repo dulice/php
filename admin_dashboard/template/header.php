@@ -36,7 +36,7 @@ require "core/functions.php";
                     <div class="col-4 col-md-3">
                         <i class="open fa fa-bars fa-lg me-3 text-light d-block d-md-none"></i>
                         <div class="d-flex align-items-center d-none d-md-block">
-                            <form action="#" class="input-group">
+                            <form action="<?php echo url() ?>search_post.php" class="input-group">
                                 <input type="text" class="form-control " placeholder="Search">
                                 <button class="btn btn-light input-group-text">
                                     <i class="fa fa-search "></i>
@@ -47,12 +47,12 @@ require "core/functions.php";
                     <!-- profile -->
                     <div class="profile col-6 col-md-3 text-end">
                         <div class="btn-group">
-                            <button class="btn btn-light sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            <button class="btn btn-light bg-light sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 <img src="<?php echo url() ?>/assets/image/<?php echo $_SESSION['user']['photo']?>" alt="profile image" class="rounded-circle avator">
                                 <span><?php echo $_SESSION['user']['username'] ?></span>
                             </button>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu" style="z-index: 2002">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>

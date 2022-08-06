@@ -1,7 +1,9 @@
 <?php 
 
 session_start();
-require_once "core/functions.php"; ?>
+require_once "core/functions.php";
+$category_id = $_GET['category_id'];
+ ?>
 <?php require_once "front_panel/head.php"; ?>
 <?php require_once "front_panel/side_head.php"; ?>
 
@@ -12,13 +14,14 @@ require_once "core/functions.php"; ?>
                 <nav aria-label="breadcrumb ">
                     <ol class="breadcrumb mb-0">
                         <li class="breadcrumb-item"><a href="index.php" class="text-decoration-none">Home</a></li>
+                        <li class="breadcrumb-item"><?php echo (singleListCategroy($_GET['category_id'])['title']) ?></li>
                     </ol>
                 </nav>
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-md-8">
-                <?php foreach(fPost() as $p) { ?>
+                <?php foreach(sameCat($category_id) as $p) { ?>
                     <?php include "card_post.php" ?>
                 <?php } ?>
             </div>

@@ -44,7 +44,7 @@
             <li></li>
         </ul>
     </div>
-    <?php if($_SESSION['user']['role'] === 0) { ?>
+    <?php if($_SESSION['user']['role'] == 0) { ?>
         <div>
             <h5 class="text-black-50 text-uppercase">Users</h5>
             <ul class="list-group">

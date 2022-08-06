@@ -25,8 +25,8 @@
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="d-flex" role="search" action="search_post.php" method="post">
+                    <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn" type="submit">Search</button>
                 </form>
                 <a href="login.php">

@@ -88,4 +88,9 @@
         </div>
     </section>
 
-<?php require_once "template/footer.php";
+<?php require_once "template/footer.php"; ?>
+<script>
+$('#list').DataTable({
+    order: [[0, 'desc']],
+});
+</script>

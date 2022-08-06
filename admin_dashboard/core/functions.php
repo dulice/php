@@ -59,7 +59,7 @@
     }
 
     function listCategory() {
-        $sql = "SELECT * FROM categories";
+        $sql = "SELECT * FROM categories ORDER BY ordering DESC";
         return items($sql);
     }
 
@@ -136,7 +136,32 @@
         return items($sql);     
     }
     
-    function sameCat($category_id,$id) {
-        $sql = "SELECT * FROM posts WHERE category_id=$category_id AND id!=$id LIMIT 2";
+    function sameCat($category_id, $id=0, $limit=9999) {
+        $sql = "SELECT * FROM posts WHERE category_id=$category_id AND id!=$id LIMIT $limit";
         return items($sql);
+    }
+
+    function searchPost($query) {
+        $sql = "SELECT * FROM posts WHERE title LIKE '%$query%' OR description LIKE '%$query%' ";
+        return items($sql);
+    }
+
+    function searchByDate($start, $end) {
+        $sql = "SELECT * FROM posts WHERE created_at BETWEEN '$start' AND '$end' ";
+        return items($sql);
+    }
+
+    function pinCat($category_id) {
+        $sql = "UPDATE categories SET ordering=NULL";
+        mysqli_query(con(), $sql);
+
+        $sql = "UPDATE categories SET ordering=1 WHERE id=$category_id";
+        runQuery($sql);
+        redirect('category_list.php');
+    }
+
+    function unpinCat($category_id) {
+        $sql = "UPDATE categories SET ordering=NULL";
+        runQuery($sql);
+        redirect('category_list.php');
     }

@@ -12,11 +12,6 @@
     <script src="<?php echo url() ?>/assets/vendor/slick/slick.min.js"></script>
     <script src="<?php echo url() ?>/assets/js/profile.js"></script>
     <script src="<?php echo url() ?>/assets/js/password.js"></script>
-    <script>
-        $('#list').DataTable({
-            order: [[0, 'desc']],
-        });
-    </script>
 </body>
 
 </html>

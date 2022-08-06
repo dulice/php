@@ -22,7 +22,7 @@
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <div class="item-list">
                             <i class="text-primary feather feather-list" style="font-size: 24px;"></i>
-                            <span class="h4">Post List</span>
+                            <span class="h4">User List</span>
                         </div>
                         <div class="">
                             <button class=" btn btn-outline-secondary">
@@ -66,4 +66,9 @@
         </div>
     </section>
 
-<?php require_once "template/footer.php";
+<?php require_once "template/footer.php"; ?>
+<script>
+    $('#list').DataTable({
+        order: [[0, 'desc']],
+    });
+</script>
