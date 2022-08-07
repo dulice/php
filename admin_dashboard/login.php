@@ -12,16 +12,12 @@ require "core/user.php";
         <title>Admin Dashboard</title>
         <link rel="stylesheet" href="<?php echo url() ?>/assets/vendor/font-awesome-4.7.0/css/font-awesome.css">
         <link rel="stylesheet" href="<?php echo url() ?>/assets/vendor/feather-icons-web/feather.css">
-        <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
         <link rel="stylesheet" href="<?php echo url() ?>/assets/node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="<?php echo url() ?>/assets/vendor/slick/slick.css">
-        <link rel="stylesheet" href="<?php echo url() ?>/assets/vendor/slick/slick-theme.css">
-        <link rel="stylesheet" href="<?php echo url() ?>/assets/style/style.css">
         <link rel="stylesheet" href="<?php echo url() ?>/assets/style/custom.css">
 
     </head>
 
-    <body>
+    <body class="bg-light">
         <div class="container">
             <div class="col-12 col-sm-6 m-auto">
                 <div class="card p-3 mt-5">   

@@ -9,23 +9,23 @@
         <i class="fa fa-xing m-4 d-block d-md-none"></i>
     </div>
     <div>
-        <ul class="list-group">
-            <li class="list-group-item "><a class=" nav-link "
-                    href="dashboard.php">Dashboard</a></li>
-            <li></li>
+        <ul class="list-group mb-3">
+            <li class="list-group-item"><a class="nav-link " href="dashboard.php">Dashboard</a></li>
+            <li class="list-group-item"><a class="nav-link " href="index.php">Go To News</a></li>
+            <li class="list-group-item"><a class="nav-link " href="payment_create.php">My Wallet</a></li>
         </ul>
     </div>
-    <div>
-        <h5 class="text-black-50 text-uppercase">Item Management</h5>
-        <ul class="list-group">
-            <li class="list-group-item"><a class="nav-link " href="item_add.php">Create New Item</a></li>
-            <li class="list-group-item"><a class=" nav-link" href="item_list.php">Item Lists</a></li>
-
-            <li></li>
-        </ul>
-    </div>
-
+    
     <?php if($_SESSION['user']['role'] <= 1) { ?>
+        <div>
+            <h5 class="text-black-50 text-uppercase">Ads Management</h5>
+            <ul class="list-group">
+                <li class="list-group-item"><a class="nav-link " href="ads_create.php">Create New Ads</a></li>
+                <li class="list-group-item"><a class=" nav-link" href="ads_list.php">Ads Lists</a></li>
+    
+                <li></li>
+            </ul>
+        </div>
         <div>
             <h5 class="text-black-50 text-uppercase">Category Management</h5>
             <ul class="list-group">
@@ -64,4 +64,5 @@
             <li></li>
         </ul>
     </div>
+    <a href="logout.php" class="btn btn-secondary w-100">Log Out</a>
 </div>

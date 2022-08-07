@@ -21,7 +21,7 @@ require "core/functions.php";
 
     </head>
 
-    <body class="text-dark">
+    <body class="bg-light">
         <section class="container-fluid">
             <div class="row">
                 <!-- menu sidebar  -->
@@ -30,36 +30,36 @@ require "core/functions.php";
 
                 <div class="col-12 col-md-9 vh-100 overflow-scroll">
                 <!-- nav bar -->
-                <div class="row justify-content-between align-items-center py-2 bg-primary mb-4 position-sticky ">
-                    <!-- input -->                   
-                    <div class="col-4 col-md-3">
-                        <i class="open fa fa-bars fa-lg me-3 text-light d-block d-md-none"></i>
-                        <div class="d-flex align-items-center d-none d-md-block">
-                            <form action="<?php echo url() ?>search_post.php" class="input-group">
-                                <input type="text" class="form-control " placeholder="Search">
-                                <button class="btn btn-light input-group-text">
-                                    <i class="fa fa-search "></i>
+                    <div class="row justify-content-between align-items-center py-2 bg-primary mb-4 position-sticky ">
+                        <!-- input -->                   
+                        <div class="col-4 col-md-3">
+                            <i class="open fa fa-bars fa-lg me-3 text-light d-block d-md-none"></i>
+                            <div class="d-flex align-items-center d-none d-md-block">
+                                <form action="<?php echo url() ?>search_post.php" class="input-group">
+                                    <input type="text" class="form-control " placeholder="Search">
+                                    <button class="btn btn-light input-group-text">
+                                        <i class="fa fa-search "></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- profile -->
+                        <div class="profile col-6 col-md-3 text-end">
+                            <div class="btn-group">
+                                <button class="btn btn-light bg-light sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <img src="<?php echo url() ?>/assets/image/<?php echo $_SESSION['user']['photo']?>" alt="profile image" class="rounded-circle avator">
+                                    <span><?php echo $_SESSION['user']['username'] ?></span>
                                 </button>
-                            </form>
+                                <ul class="dropdown-menu" style="z-index: 2002">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <!-- profile -->
-                    <div class="profile col-6 col-md-3 text-end">
-                        <div class="btn-group">
-                            <button class="btn btn-light bg-light sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <img src="<?php echo url() ?>/assets/image/<?php echo $_SESSION['user']['photo']?>" alt="profile image" class="rounded-circle avator">
-                                <span><?php echo $_SESSION['user']['username'] ?></span>
-                            </button>
-                            <ul class="dropdown-menu" style="z-index: 2002">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="logout.php">Logout</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>

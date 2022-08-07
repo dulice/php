@@ -11,3 +11,4 @@ function url() {
 }
 
 $role = ["Admin", "Editor", "User"];
+date_default_timezone_set('Asia/Yangon');

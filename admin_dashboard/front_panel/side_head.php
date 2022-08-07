@@ -32,5 +32,12 @@
                 </div>
             </div>
         </nav>
+        <div>
+            <?php foreach(showAds() as $ad) { ?>
+                <a href="<?php echo $ad['link'] ?>" target="_blank">
+                    <img src="<?php echo $ad['photo'] ?>" alt="" class="w-100 mb-4 rounded">
+                </a>
+            <?php } ?>
+        </div>
     </div>
 </div>

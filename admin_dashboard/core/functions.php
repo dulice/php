@@ -182,3 +182,65 @@
         $sql = "SELECT * FROM viewers WHERE post_id=$post_id";
         return items($sql);
     }
+
+    //ads
+
+    function createAds() {
+        $foldername = "store/";
+        $filename = $_FILES['photo']['name'];
+        $tempName = $_FILES['photo']['tmp_name'];
+        $photo = "$foldername".uniqid()."_"."$filename";
+        move_uploaded_file($tempName, $photo);
+        
+        $owner_name = $_POST['owner_name'];
+        $link = $_POST['link'];
+        $start = $_POST['start'];
+        $end = $_POST['end'];
+        $sql = "INSERT INTO ads(owner_name, photo, link, start, end) VALUES ('$owner_name', '$photo', '$link', '$start', '$end')";
+        runQuery($sql);
+        redirect('ads_list.php');
+    }
+
+    function showAds() {
+        $today = date("Y-m-d");
+        $sql = "SELECT * FROM ads WHERE start <= '$today' AND end > '$today'";
+        return items($sql);
+    }
+
+    function adsList() {
+        $today = date("Y-m-d");
+        $sql = "SELECT * FROM ads";
+        return items($sql);
+    }
+
+    //payment
+
+    function createPayment() {
+        $from_id = $_SESSION['user']['id'];
+        $to_id = $_POST['to_id'];
+        $amount = $_POST['amount'];
+        $description = $_POST['description'];
+
+        $payAmount = $_SESSION['user']['money'] - $amount;
+        $recieveAmount = user($to_id)['money'] + $amount;
+
+        if(user($from_id)['money'] >= $amount) {
+            $sql = "UPDATE users SET money='$payAmount' WHERE id=$from_id";
+            mysqli_query(con(), $sql);
+    
+            $sql = "UPDATE users SET money='$recieveAmount' WHERE id=$to_id";
+            mysqli_query(con(), $sql);
+    
+            $sql = "INSERT INTO transition(from_id, to_id, amount, description) VALUES ('$from_id', '$to_id', '$amount', '$description')";
+            runQuery($sql);
+            redirect('payment_history.php');
+        } else {
+           echo alert("danger", "You don't have enough money");
+        }
+    }
+
+    function paymentList() {
+        $id= $_SESSION['user']['id'];
+        $sql = "SELECT * FROM transition WHERE from_id=$id OR to_id=$id";
+        return items($sql);
+    }
