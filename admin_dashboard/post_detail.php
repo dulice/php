@@ -8,13 +8,13 @@
 <div class="container-fluid">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-6">
                 
                 <div class="card mb-3 fcard shadow">
                     <div class="card-header">
-                        <p>
-                            <a href="fpost_detail.php?id=<?php echo singleListPost($id)['id']; ?>" class="h3 d-inline-block"><?php echo singleListPost($id)['title']; ?></a>
-                        </p>
+                        <h3>
+                            <?php echo singleListPost($id)['title']; ?>
+                        </h3>
                         <span>
                             <i class="feather-user text-primary"></i>
                             <span><?php echo (user(singleListPost($id)['user_id'])['username']); ?></span>
@@ -30,15 +30,28 @@
                         <p class="text-black-50"><?php echo html_entity_decode((singleListPost($id)['description'])); ?></p>
                     </div>
                 </div>
-                <div class="row">
-                    <?php foreach(sameCat($category_id['id'], $id, 2) as $p) { ?>
-                        <div class="col-12 col-md-6">                         
-                            <?php include "card_post.php" ?>
-                        </div>
-                    <?php } ?>
-                </div>
             </div>
-            <?php require_once "front_panel/right_side.php" ?>
+            <div class="col-12 col-md-6">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Device</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach(countByPost($_GET['id']) as $p) {?>
+                            <tr>
+                                <td class="text-nowrap"><?php echo ($p['user_id'] == 0 ? "Guess" : user($p['user_id'])['username'])?></td>
+                                <td><?php echo $p['device'] ?></td>
+                                <td class="text-nowrap"><?php echo showTime($p['created_at']) ?></td>
+                            </tr>
+                        <?php } ?>
+                        <?php ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

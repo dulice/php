@@ -11,10 +11,9 @@
     <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="<?php echo url() ?>/assets/vendor/slick/slick.css">
     <link rel="stylesheet" href="<?php echo url() ?>/assets/vendor/slick/slick-theme.css">
-    <link rel="stylesheet" href="<?php echo url() ?>/assets/style/style.css">
     <link rel="stylesheet" href="<?php echo url() ?>/assets/style/custom.css">
 
     <title>Document</title>
 </head>
-<body>
+<body class="bg-light">
     

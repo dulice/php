@@ -131,8 +131,8 @@
     }
 
     //front panel
-    function fPost() {
-        $sql = "SELECT * FROM posts";
+    function fPost($data="created_at", $order="DESC") {
+        $sql = "SELECT * FROM posts ORDER BY $data $order";
         return items($sql);     
     }
     
@@ -164,4 +164,21 @@
         $sql = "UPDATE categories SET ordering=NULL";
         runQuery($sql);
         redirect('category_list.php');
+    }
+
+    //viewer
+
+    function addViewer($user_id, $post_id, $device) {
+        $sql = "INSERT INTO viewers(user_id, post_id, device) VALUES ('$user_id', '$post_id', '$device')";
+        runQuery($sql);
+    }
+
+    function countByUser($user_id) {
+        $sql = "SELECT * FROM viewers WHERE user_id=$user_id";
+        return items($sql);
+    }
+
+    function countByPost($post_id) {
+        $sql = "SELECT * FROM viewers WHERE post_id=$post_id";
+        return items($sql);
     }

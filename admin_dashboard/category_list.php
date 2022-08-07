@@ -55,13 +55,13 @@
                                         <td><?php echo (user($row['user_id'])['username']) ?></td>
                                         
                                         <td class=''>
-                                            <a class='btn btn-sm  bg-primary text-white text-decoration-none' href="category_update.php?id=<?php echo $row['id'] ?>"><i class="feather-edit"></i></a>
-                                            <a onclick="return confirm('Are you sure, you want to delete it?')" class='btn btn-sm bg-danger text-white text-decoration-none' href="category_delete.php?id=<?php echo $row['id'] ?>"><i class="feather-trash"></i></a>
+                                            <a class='btn btn-sm  btn-outline-primary text-decoration-none' href="category_update.php?id=<?php echo $row['id'] ?>"><i class="feather-edit"></i></a>
+                                            <a onclick="return confirm('Are you sure, you want to delete it?')" class='btn btn-sm btn-outline-danger text-decoration-none' href="category_delete.php?id=<?php echo $row['id'] ?>"><i class="feather-trash"></i></a>
                                             
                                             <?php if($row['ordering'] != 1) { ?>
-                                                <a class='btn btn-sm  bg-info me-3 text-white text-decoration-none' href="pin_category.php?id=<?php echo $row['id'] ?>"><i class="feather-upload"></i></a>
+                                                <a class='btn btn-sm  btn-outline-warning me-3 text-decoration-none' href="pin_category.php?id=<?php echo $row['id'] ?>"><i class="feather-upload"></i></a>
                                             <?php } else { ?>
-                                                <a class='btn btn-sm  bg-info me-3 text-white text-decoration-none' href="unpin_category.php?id=<?php echo $row['id'] ?>"><i class="feather-arrow-down"></i></a>
+                                                <a class='btn btn-sm  btn-outline-warning me-3 text-decoration-none' href="unpin_category.php?id=<?php echo $row['id'] ?>"><i class="feather-arrow-down"></i></a>
                                             <?php }  ?>
                                         </td>
                                         <td><?php echo showTime($row['created_at']) ?></td>

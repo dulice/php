@@ -45,6 +45,7 @@
                                     <?php if($_SESSION['user']['role'] != 2) { ?>
                                         <th>User</th>
                                     <?php } ?>
+                                    <th>View</th>
                                     <th>Control</th>
                                     <th>Created</th>
                                 </tr>
@@ -55,9 +56,7 @@
                                     <tr>
                                         <td><?php echo $row['id'] ?></td>
                                         <td>
-                                            <a href="post_detail.php?id=<?php echo $row['id']; ?>">
-                                                <?php echo textLimit($row['title']); ?>
-                                            </a>
+                                            <?php echo textLimit($row['title']); ?>
                                         </td>
                                         <td><?php echo strip_tags(html_entity_decode((textLimit($row['description'])))) ?></td>
                                         <td class="text-nowrap">
@@ -67,12 +66,19 @@
                                         <?php if($_SESSION['user']['role'] != 2) { ?>
                                             <td class="text-nowrap"><?php echo (user($row['user_id'])['username']) ?></td>
                                         <?php } ?>
+
+                                        <td class="text-nowrap">
+                                            <?php echo count(countByPost($row['id'])) ?>                                      
+                                        </td>
                                         
                                         <td class='text-nowrap'>
-                                            <a class='btn btn-sm bg-primary me-1 text-white text-decoration-none' href="post_update.php?id=<?php echo $row['id'] ?>"> 
+                                            <a class='btn btn-sm btn-outline-warning me-1 text-decoration-none' href="post_detail.php?id=<?php echo $row['id']; ?>"> 
+                                                <i class="feather-info"></i>
+                                            </a>
+                                            <a class='btn btn-sm btn-outline-primary me-1 text-decoration-none' href="post_update.php?id=<?php echo $row['id'] ?>"> 
                                                 <i class="feather-edit"></i>
                                             </a>
-                                            <a onclick="return confirm('Are you sure, you want to delete it?')" class='btn btn-sm bg-danger text-white text-decoration-none' href="post_delete.php?id=<?php echo $row['id'] ?>">
+                                            <a onclick="return confirm('Are you sure, you want to delete it?')" class='btn btn-sm btn-outline-danger text-decoration-none' href="post_delete.php?id=<?php echo $row['id'] ?>">
                                                 <i class="feather-trash"></i>
                                             </a>
                                         </td>

@@ -1,7 +1,7 @@
 <div class="card mb-3 fcard shadow">
     <div class="card-header">
         <p>
-            <a href="fpost_detail.php?id=<?php echo $p['id']; ?>" class="h3 d-inline-block"><?php echo textLimit($p['title'], 70); ?></a>
+            <a href="fpost_detail.php?id=<?php echo $p['id']; ?>" class="h3 text-decoration-none"><?php echo textLimit($p['title'], 70); ?></a>
         </p>
         <span>
             <i class="feather-user text-primary"></i>

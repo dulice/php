@@ -1,5 +1,18 @@
 <div class="col-12 col-md-4">
     <div class="position-sticky">
+        <div class="card">
+            <?php if(isset($_SESSION['user']['username'])) { ?>
+                <div class="card-body">
+                    <p>Hello <?php echo $_SESSION['user']['username']; ?></p>
+                    <a href="dashboard.php" class="btn btn-primary">Go To Dashboard</a>
+                </div>
+            <?php } else { ?>
+                <div class="card-body">
+                    <p>Hello Guess</p>
+                    <a href="register.php" class="btn btn-primary">Register Here</a>
+                </div>
+            <?php } ?>
+        </div>
         <div >
             <h4>Categories</h4>
             <div class="list-group mt-3">
@@ -33,7 +46,7 @@
                     <label for="">End Date:</label>
                     <input type="date" name="end" id="" class="form-control">
                 </div>
-                <button class="btn btn-primary bg-primary text-white">Search</button>
+                <button class="btn btn-primary">Search</button>
             </form>
         </div>
     </div>

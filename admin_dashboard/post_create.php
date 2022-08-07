@@ -20,13 +20,12 @@
         <link rel="stylesheet" href="<?php echo url() ?>/assets/vendor/feather-icons-web/feather.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="<?php echo url() ?>/assets/style/style.css">
         <link rel="stylesheet" href="<?php echo url() ?>/assets/style/custom.css">
 
     </head>
 
     <body>
-        <section class="container-fluid">
+    <section class="container-fluid">
             <div class="row">
                 <!-- menu sidebar  -->
                 
@@ -39,23 +38,23 @@
                     <div class="col-4 col-md-3">
                         <i class="open fa fa-bars fa-lg me-3 text-light d-block d-md-none"></i>
                         <div class="d-flex align-items-center d-none d-md-block">
-                            <form action="#" class="input-group">
+                            <form action="<?php echo url() ?>search_post.php" class="input-group">
                                 <input type="text" class="form-control " placeholder="Search">
                                 <button class="btn btn-light input-group-text">
-                                    <i class="fa fa-search "></i>
+                                    <i class="feather-search"></i>
                                 </button>
                             </form>
                         </div>
                     </div>
                     <!-- profile -->
-                    <div class="profile col-6 col-md-3 text-end">
+                    <div class="profile col-6 col-md-3" style="text-align: end;">
                         <div class="btn-group">
-                            <button class="btn btn-light sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            <button class="btn btn-light bg-light sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 <img src="<?php echo url() ?>/assets/image/<?php echo $_SESSION['user']['photo']?>" alt="profile image" class="rounded-circle avator">
                                 <span><?php echo $_SESSION['user']['username'] ?></span>
                             </button>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu" style="z-index: 2002">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -68,8 +67,6 @@
                     </div>
                 </div>
 
-        <div class="card mb-4">
-            <div class="card-body">
                 <nav aria-label="breadcrumb ">
                     <ol class="breadcrumb mb-0">
                         <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
@@ -77,8 +74,7 @@
                         <li class="breadcrumb-item active" aria-current="page">Add Post</li>
                     </ol>
                 </nav>
-            </div>
-        </div>
+
         <div class="card">
             <div class="card-header">
                 <div class="d-flex justify-content-between align-items-center">

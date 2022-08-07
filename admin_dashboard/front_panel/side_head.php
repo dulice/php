@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="container">
-        <nav class="navbar navbar-expand-lg bg-primary navbar-light my-3 rounded-2">
+        <nav class="navbar navbar-expand-lg bg-primary navbar-dark my-3 rounded-2">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php">My Post</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,11 +27,8 @@
                 </ul>
                 <form class="d-flex" role="search" action="search_post.php" method="post">
                     <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn" type="submit">Search</button>
+                    <button class="btn btn-outline-light" type="submit">Search</button>
                 </form>
-                <a href="login.php">
-                    <button class="btn btn-secondary bg-secondary text-white">Login</button>
-                </a>
                 </div>
             </div>
         </nav>

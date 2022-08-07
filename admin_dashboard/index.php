@@ -14,11 +14,30 @@ require_once "core/functions.php"; ?>
                         <li class="breadcrumb-item"><a href="index.php" class="text-decoration-none">Home</a></li>
                     </ol>
                 </nav>
-            </div>
+            </div>          
         </div>
         <div class="row">
             <div class="col-12 col-md-8">
-                <?php foreach(fPost() as $p) { ?>
+                <div class="dropdown text-end mb-3" style="z-index: 2010;">
+                    <button class="btn btn-primary bg-primary text-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Sort News
+                    </button>
+                    <?php
+                        if(isset($_GET['sort_type']) && isset($_GET['sort_by'])) {
+                            $sort_type = $_GET['sort_type'];
+                            $sort_by = strtoupper($_GET['sort_by']);
+                            $posts = fPost($sort_type, $sort_by);
+                        } else {
+                            $posts = fPost();
+                        }
+                    ?>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="?sort_type=created_at&sort_by=desc">Newest to Latest</a></li>
+                        <li><a class="dropdown-item" href="?sort_type=created_at&sort_by=asc">Latest to Newest</a></li>
+                        <li><a class="dropdown-item" href="index.php">Default</a></li>
+                    </ul>
+                </div>
+                <?php foreach($posts as $p) { ?>
                     <?php include "card_post.php" ?>
                 <?php } ?>
             </div>

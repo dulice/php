@@ -2,7 +2,9 @@
     <div class="logo  bg-light d-flex justify-content-between align-items-center ">
         <div class="logo d-flex justify-content-start align-items-center m-4">
             <i class="fa fa-shopping-cart fa-lg text-primary me-2"></i>
-            <h5 class="text-primary mb-0">My Shop</h5>
+            <h5 class="text-primary mb-0">
+                <a href="index.php" class="link">My Shop</a>
+            </h5>
         </div>
         <i class="fa fa-xing m-4 d-block d-md-none"></i>
     </div>
