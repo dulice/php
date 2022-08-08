@@ -38,6 +38,16 @@
         return $text;
     }
 
+    function totalCount($table) {
+        $sql = "SELECT COUNT(id) AS total FROM $table";
+        return items($sql)[0]['total'];
+    }
+
+    function totalCountChart($table, $data, $condition=1) {
+        $sql = "SELECT COUNT(id) AS total FROM $table WHERE $data = $condition";
+        return items($sql)[0]['total'];
+    }
+
     //user
     function user($u) {
         $sql = "SELECT * FROM users WHERE id=$u";
@@ -243,4 +253,10 @@
         $id= $_SESSION['user']['id'];
         $sql = "SELECT * FROM transition WHERE from_id=$id OR to_id=$id";
         return items($sql);
+    }
+
+    //dashboard
+    function viewPerDay($date) {
+        $sql = "SELECT COUNT(id) as total FROM `viewers` WHERE DATE(created_at) = '$date'";
+        return items($sql)[0]['total'];
     }

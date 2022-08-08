@@ -26,7 +26,7 @@
                             <div class="card-header">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="item-add-title d-flex align-items-center">
-                                        <i class="fa fa-2x fa-money text-primary"></i>
+                                        <i class="feather-dollar-sign h4 m-0 text-primary"></i>
                                         <span class="h4 mb-0 ps-2">My Wallet</span>
                                     </div>
                                     <div>

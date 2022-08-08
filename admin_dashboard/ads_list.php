@@ -21,7 +21,7 @@
                     <!-- heading -->
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <div class="item-list">
-                            <i class="text-primary feather feather-list" style="font-size: 24px;"></i>
+                            <i class="text-primary feather-layout" style="font-size: 24px;"></i>
                             <span class="h4">Ads List</span>
                         </div>
                         <div class="">

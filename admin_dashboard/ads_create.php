@@ -28,10 +28,10 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="item-add-title d-flex align-items-center">
                                         <i class="fa fa-plus-circle fa-lg text-primary"></i>
-                                        <span class="h4 mb-0 ps-2">Add Item</span>
+                                        <span class="h4 mb-0 ps-2">Add Ads</span>
                                     </div>
                                     <button onclick="linkClick('ads_list.php')" class="btn btn-outline-primary">
-                                        <i class="fa fa-list"></i>
+                                        <i class="feather-layout h4"></i>
                                     </button>
                                 </div>
                             </div>

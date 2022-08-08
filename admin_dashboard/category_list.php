@@ -21,8 +21,8 @@
                     <!-- heading -->
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <div class="item-list">
-                            <i class="text-primary feather feather-list" style="font-size: 24px;"></i>
-                            <span class="h4">Category List</span>
+                            <i class="text-primary feather-layers" style="font-size: 24px;"></i>
+                            <span class="h4"> Category List</span>
                         </div>
                         <div class="">
                             <button class=" btn btn-outline-secondary">

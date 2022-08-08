@@ -79,8 +79,8 @@
             <div class="card-header">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="item-add-title d-flex align-items-center">
-                        <i class="feather-fa-plus-circle text-primary"></i>
-                        <span class="h4 mb-0 ps-2">Create New Post</span>
+                        <i class="feather-plus-circle h4 text-primary my-0"></i>
+                        <span class="h4 mb-0 ps-2 d-inline-block">Create New Post</span>
                     </div>
                     <button onclick="linkClick('item_list.php')" class="btn btn-outline-primary">
                         <i class="feather-list"></i>
