@@ -2,13 +2,25 @@
 
 session_start();
 require_once "core/functions.php"; 
-$id = $_GET['id'];
-$category_id = singleListCategroy(singleListPost($id)['category_id']);
+
+if(isset($_GET['id'])) {
+    $id = $_GET['id'];
+} else {
+    redirect('index.php');
+}
+
+if(singleListPost($id)) {
+    $category_id = singleListCategroy(singleListPost($id)['category_id']);
+} else {
+    die(alert("danger", "404 page not found"));
+}
+
 if(isset($_SESSION['user']['id'])) {
     $user_id = $_SESSION['user']['id'];
 } else {
     $user_id = 0;
 }
+
 $post_id = singleListPost($id)['id'];
 $device = $_SERVER['HTTP_USER_AGENT'];
 addViewer($user_id, $post_id, $device);

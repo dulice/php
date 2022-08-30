@@ -61,7 +61,7 @@
 
     // category 
     function createCategory() {
-        $title = entity($_POST['title']);
+        $title = entity(strip_tags($_POST['title']));
         $user_id = $_SESSION['user']['id'];
         $sql = "INSERT INTO categories(title,user_id) VALUES ('$title','$user_id')";
         runQuery($sql);
@@ -92,12 +92,20 @@
         redirect('category_list.php');
     }
 
+    function isCategory($id) {
+        if(singleListCategroy($id)) {
+            return singleListCategroy($id);
+        } else {
+            die(alert("danger", "Category does not match"));
+        }
+    }
+
     //post
 
     function createPost() {
         $title = entity($_POST['title']);
-        $description = entity($_POST['description']);
-        $category_id = $_POST['category_id'];
+        $description = entity($_POST['description']); 
+        $category_id = isCategory($_POST['category_id']);
         $user_id = $_SESSION['user']['id'];
         $sql = "INSERT INTO posts(title, description, category_id, user_id) VALUES ('$title','$description', '$category_id', '$user_id')";
         runQuery($sql);
