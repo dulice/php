@@ -268,3 +268,8 @@
         $sql = "SELECT COUNT(id) as total FROM `viewers` WHERE DATE(created_at) = '$date'";
         return items($sql)[0]['total'];
     }
+
+    //decode php to json
+    function jsonOutput($json) {
+        return json_encode($json);
+    }
